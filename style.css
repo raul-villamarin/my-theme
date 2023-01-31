@@ -1,0 +1,26 @@
+/*
+Theme Name: My Theme
+Theme URI: https://www.trickdevs.com
+Author: Raul
+Description: My Theme.
+Requires at least: 6.1
+Tested up to: 6.1
+Requires PHP: 5.6
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+Text Domain: my-theme
+Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, featured-images, full-site-editing, block-patterns, rtl-language-support, sticky-post, threaded-comments, translation-ready, wide-blocks, block-styles, accessibility-ready, blog, portfolio, news
+*/
+@import url("./styles/container.css");
+@import url("./styles/topbar.css");
+@import url("./styles/header.css");
+@import url("./styles/nav-menu.css");
+@import url("./styles/footer.css");
+body{
+    background: #fff;
+    color: #444;
+    font-family: "Open Sans", sans-serif;
+    margin: 0;
+    padding: 0;
+}

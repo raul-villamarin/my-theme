@@ -1,0 +1,32 @@
+#nav-menu-container {
+    float: right;
+    margin: 0;
+}
+.nav-menu, .nav-menu * {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.nav-menu > li {
+    margin-left: 10px;
+}
+.nav-menu > li {
+    float: left;
+}
+.nav-menu li {
+    position: relative;
+    white-space: nowrap;
+}
+.nav-menu a {
+    padding: 10px 8px;
+    text-decoration: none;
+    display: inline-block;
+    color: #555;
+    font-family: "Raleway", sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    outline: none;
+}
+.nav-menu li:hover > a, .nav-menu > .menu-active > a {
+    color: #50d8af;
+}
