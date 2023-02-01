@@ -1,8 +1,14 @@
 <?php 
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
+
 define('MY_THEME_VERSION','1.0');
+
+require_once __DIR__.'/widgets/ContactWidget.php';
+require_once __DIR__.'/widgets/SocialWidget.php';
+
 function my_theme_assets(){
 	wp_enqueue_style(
 				'google-fonts',
@@ -23,4 +29,24 @@ function my_theme_assets(){
 				MY_THEME_VERSION
 			);
 }
+
+
+
+function my_theme_widgets(){
+	register_sidebar(
+		array(
+			'id'            => 'the_topbar',
+			'name'          => __( 'Topbar Sidebar' ),
+			'description'   => __( 'The topbar.' ),
+			'before_widget' => '',
+			'after_widget'  => '',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
+		)
+	);
+	register_widget( new mytheme\widgets\ContactWidget() );
+	register_widget( new mytheme\widgets\SocialWidget() );
+}
+
 add_action( 'init', 'my_theme_assets' );
+add_action( 'widgets_init', 'my_theme_widgets' );
