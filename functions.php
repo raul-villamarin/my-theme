@@ -8,6 +8,7 @@ define('MY_THEME_VERSION','1.0');
 
 require_once __DIR__.'/widgets/ContactWidget.php';
 require_once __DIR__.'/widgets/SocialWidget.php';
+require_once __DIR__.'/widgets/MenuWidget.php';
 
 function my_theme_assets(){
 	wp_enqueue_style(
@@ -44,8 +45,22 @@ function my_theme_widgets(){
 			'after_title'   => '</h3>',
 		)
 	);
+
+	register_sidebar(
+		array(
+			'id'            => 'the_menu',
+			'name'          => __( 'Menu Sidebar' ),
+			'description'   => __( 'The Menu Sidebar.' ),
+			'before_widget' => '',
+			'after_widget'  => '',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
+		)
+	);
+
 	register_widget( new mytheme\widgets\ContactWidget() );
 	register_widget( new mytheme\widgets\SocialWidget() );
+	register_widget( new mytheme\widgets\MenuWidget() );
 }
 
 add_action( 'init', 'my_theme_assets' );
